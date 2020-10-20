@@ -14,6 +14,13 @@ class Wall{
     noStroke();
     rectMode(CENTER);
     rect(x,y,sizeX,sizeY);
+    /////////////////////////////////////////////////////
+//
+// Programmer: kantinun
+//
+// Description: Draw the wall by using rectangle command
+// 
+/////////////////////////////////////////////////////
   }
 }
 
@@ -60,6 +67,13 @@ class Robot{
       stroke(255,255,0);
        line(x+sizeX,y,x-sizeX,y-sizeY); 
        line(x-sizeX,y+sizeY,x+sizeX,y);
+    /////////////////////////////////////////////////////
+//
+// Programmer: kantinun
+//
+// Description: Draw Robot by using line command robot have 4 model (depend on attribute angle) ex. robot turn left, robot turn right, robot look up, robot look down
+// 
+/////////////////////////////////////////////////////
     }
   }
   void moveForward(){
@@ -72,6 +86,13 @@ class Robot{
     if(x>width-(width/(w.column*2))){x = width-(width/(2*w.column));}
     if(y<height/(w.row*2)){y =height/(w.row*2);}
     if(y>height-(height/(w.row*2))){ y = height-(height/(w.row*2));}
+    /////////////////////////////////////////////////////
+//
+// Programmer: kantinun
+//
+// Description: change position x and y of robot to make robot move forward(depend on attribute angle)
+// 
+/////////////////////////////////////////////////////
   }
   void moveBackward(){
     if(angle==0){y += velY;}
@@ -83,16 +104,44 @@ class Robot{
     if(x>width-(width/(w.column*2))){x = width-(width/(2*w.column));}
     if(y<height/(w.row*2)){y =height/(w.row*2);}
     if(y>height-(height/(w.row*2))){ y = height-(height/(w.row*2));}
+  /////////////////////////////////////////////////////
+//
+// Programmer: kantinun
+//
+// Description: change position x and y of robot to make robot move backward(depend on attribute angle)
+// 
+/////////////////////////////////////////////////////
   }
   void turnLeft(){
     angle+=90;
+    /////////////////////////////////////////////////////
+//
+// Programmer: kantinun
+//
+// Description: change value of attribute angle by plus 90 degree
+// 
+/////////////////////////////////////////////////////
   }
   void turnRight(){
     angle-=90;
+      /////////////////////////////////////////////////////
+//
+// Programmer: kantinun
+//
+// Description: change value of attribute angle by minus 90 degree
+// 
+/////////////////////////////////////////////////////
   }
   boolean checkWall(Wall wall){
     if(dist(x,y,wall.x,wall.y)==0){return true;}
     else{return false;}
+      /////////////////////////////////////////////////////
+//
+// Programmer: kantinun
+//
+// Description: check position of robot and wall that collide?
+// 
+/////////////////////////////////////////////////////
   }
   
   void bounce(int key){
@@ -110,6 +159,13 @@ class Robot{
        if(angle == 90 || angle ==-270){x+=velX;}
      }
   }
+      /////////////////////////////////////////////////////
+//
+// Programmer: kantinun
+//
+// Description: bounce robot by step back 1 step(depend on key that user pressed and attribute angle)
+// 
+/////////////////////////////////////////////////////
   }
 }
 
