@@ -275,6 +275,7 @@ class World{
 // Description: draw grid and have image save , folder
 // 
 /////////////////////////////////////////////////////
+
   void saveWorld(){
     String[] checkpoint  = {str(column),str(row),str(r.x),str(r.y),str(r.angle),str(t.x),str(t.y)};
     for(Wall temp:wall){
@@ -282,6 +283,13 @@ class World{
     }
     saveStrings("save.txt", checkpoint);
   }
+        /////////////////////////////////////////////////////
+//
+// Programmer: Kaewmanee
+//
+// Description: save world as text file
+// 
+/////////////////////////////////////////////////////
   
   void loadWorld(){
     String[] checkpoint = loadStrings("save.txt");
@@ -302,6 +310,13 @@ class World{
         index++;
     }
   }
+         /////////////////////////////////////////////////////
+//
+// Programmer: Kaewmanee
+//
+// Description: loadworld from text file
+// 
+/////////////////////////////////////////////////////
   
   void update(){
     for(Wall temp:wall){
@@ -327,6 +342,13 @@ class World{
     if(dist(r.x,r.y,t.x,t.y)==0){t.randomPosition();}
   }
 }
+        /////////////////////////////////////////////////////
+//
+// Programmer: Kaewmanee
+//
+// Description: draw wall , robot ,target and check position and update all
+// 
+/////////////////////////////////////////////////////
 
 class InputProcessor{
   int forward,backward,left,right;
@@ -346,6 +368,13 @@ class InputProcessor{
     }
   }
 }
+        /////////////////////////////////////////////////////
+//
+// Programmer: Kaewmanee
+//
+// Description: input key and move robot
+// 
+/////////////////////////////////////////////////////
 
 World w;
 void setup(){
