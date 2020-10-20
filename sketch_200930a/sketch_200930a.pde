@@ -181,13 +181,19 @@ class Target{
     x = (int(random(0,w.column))*width/w.column)+width/(w.column*2);
     y = (int(random(0,w.row))*height/w.row)+height/(w.row*2);
   }
-  
+      /////////////////////////////////////////////////////
+//
+// Programmer: Phimbun
+//
+// Description: random Position Target
+// 
+/////////////////////////////////////////////////////
   void draw(){
     fill(255,0,0);
     noStroke();
     polygon(x,y,0.25*width/w.column,6); 
   }
-  
+
   void polygon(float x, float y, float radius, int npoints) {
   float angle = TWO_PI / npoints;
   beginShape();
@@ -198,13 +204,26 @@ class Target{
     }
     endShape(CLOSE);
   }
+      /////////////////////////////////////////////////////
+//
+// Programmer: Phimbun
+//
+// Description: draw Target polygon
+// 
+/////////////////////////////////////////////////////  
   
   boolean checkWall(Wall wall){
     if(dist(x,y,wall.x,wall.y)==0){return true;}
     else{return false;}
   }
 }
-
+      /////////////////////////////////////////////////////
+//
+// Programmer: Phimbun
+//
+// Description: check wall
+// 
+/////////////////////////////////////////////////////
 class World{
   int column,row;
   Target t;
@@ -249,7 +268,13 @@ class World{
     image(imgSave, width-25,25,40,40);
     image(imgLoad, width-60,25,35,35);
   }
-  
+        /////////////////////////////////////////////////////
+//
+// Programmer: Phimbun
+//
+// Description: draw grid and have image save , folder
+// 
+/////////////////////////////////////////////////////
   void saveWorld(){
     String[] checkpoint  = {str(column),str(row),str(r.x),str(r.y),str(r.angle),str(t.x),str(t.y)};
     for(Wall temp:wall){
